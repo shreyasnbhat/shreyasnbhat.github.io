@@ -1,96 +1,11 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Marketplace
-    Explore
-
-    @shreyasnbhat
-
-2
-0
-
-    1
-
-shreyasnbhat/education-engineering
-Code
-Issues 7
-Pull requests 2
-Projects 4
-Wiki
-Insights
-Settings
-education-engineering/app/templates/courses.html
-fcb7397 6 days ago
-@shreyasnbhat shreyasnbhat feat: Added total update trigger
-54 lines (52 sloc) 1.87 KB
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Subjects</title>
-
-    <link href="{{url_for('static', filename='css/materialize.min.css')}}" rel="stylesheet">
-    <link href="{{url_for('static', filename='css/home_styles.css')}}" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<nav>
-    <div class="nav-wrapper orange darken-3">
-        <a href="{{url_for('getCourses',admin=admin)}}" class="brand-logo title-style">Grade Predictor and Analyzer</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            {% if super %}
-            <li class="large-font"><a href="{{url_for('getAllAdmins')}}">Admins</a></li>
-            {% endif %}
-            <li class="large-font active"><a href="{{url_for('getCourses')}}">Courses</a></li>
-            <li class="large-font"><a href="{{url_for('getDashboard')}}">Dashboard</a></li>
-            <li class="large-font"><a href="{{url_for('logout')}}">Logout</a></li>
-        </ul>
-    </div>
-</nav>
-{% if admin %}
-<div class="block-style">
-    <form action="{{url_for('upload')}}">
-        <input type="submit" value="Upload File" class="btn waves-effect waves-light"/>
-    </form>
-</div>
-{% endif %}
-<div class="block-style">
-    {% if courses %}
-    <ul class="collection">
-        {% for course in courses %}
-        <li class="collection-item">
-            {% if admin %}
-            <a href="{{url_for('getStudentsByCourse',course_id=course.id)}}">
-            {% else %}
-            <a href="{{url_for('getScoresByStudent',course_id=course.id, student_id=user_id)}}">
-            {% endif %}
-            <p class="small-font">{{course.name}}</p>
-            <p> {{course.id}} </p>
-            </a>
-        {% endfor %}
-        </li>
-    </ul>
-    {% else %}
-    <h3>You have no Subjects currently!</h3>
-    {% endif %}
-</div>
+Hello World this is my new site.
 </body>
 </html>
-
-    © 2017 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    API
-    Training
-    Shop
-    Blog
-    About
